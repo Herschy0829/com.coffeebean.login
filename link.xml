@@ -1,0 +1,13 @@
+<linker>
+  <!--
+    保留模块程序集，确保 [assembly: CoffeeBeanModule] 特性在构建（IL2CPP / 代码裁剪）后仍可被发现。
+    Bridge 模式下列**两个**程序集：
+      · 主程序集：模块的运行时代码
+      · Bridge 程序集：模块标记 + Core 生命周期（未装 Core 时不参与编译，此时保留规则无副作用）
+
+    另外两个 SDK 适配程序集（Firebase / Google Sign-In）**不在这里保留** ——
+    它们由各自 SDK 的包在消费工程里启用，且都带 defineConstraints，不会凭空参与构建。
+  -->
+  <assembly fullname="CoffeeBean.Login" preserve="all"/>
+  <assembly fullname="CoffeeBean.Login.Bridge" preserve="all"/>
+</linker>

@@ -1,0 +1,21 @@
+# ===== Unity generated =====
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
+*.csproj
+*.sln
+*.user
+*.pidb
+
+# ===== IDE / OS =====
+.vs/
+.idea/
+.vscode/
+.DS_Store
+
+# ===== 本地开发 =====
+/dev/

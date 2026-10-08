@@ -1,0 +1,26 @@
+{
+  "name": "CoffeeBean.Login.Firebase",
+  "rootNamespace": "CoffeeBean",
+  "references": [
+    "CoffeeBean.Login",
+    "Firebase.Auth",
+    "Firebase.App"
+  ],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": false,
+  "defineConstraints": [
+    "COFFEEBEAN_FIREBASE_AUTH"
+  ],
+  "versionDefines": [
+    {
+      "name": "com.google.firebase.auth",
+      "expression": "",
+      "define": "COFFEEBEAN_FIREBASE_AUTH"
+    }
+  ],
+  "noEngineReferences": false
+}

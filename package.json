@@ -1,0 +1,22 @@
+{
+  "name": "com.coffeebean.login",
+  "version": "0.1.0",
+  "displayName": "CoffeeBean Login",
+  "description": "Account login module for the CoffeeBean framework: pluggable provider (Google / Apple / Guest / custom) + pluggable backend (Firebase Auth by default, self-hosted server supported), account linking (guest -> real account), ID-token retrieval, and platform setup tooling. Firebase and Google Sign-In are OPTIONAL compile-time integrations: the module compiles and works without them (guest/email/custom providers), and lights up automatically when their packages are present. Depends on com.coffeebean.tools.",
+  "unity": "6000.0",
+  "author": {
+    "name": "Herschy0829"
+  },
+  "keywords": ["coffeebean", "login", "auth", "account", "google", "firebase", "signin", "oauth"],
+  "dependencies": {
+    "com.coffeebean.tools": "0.13.0"
+  },
+  "testables": ["com.coffeebean.login"],
+  "samples": [
+    {
+      "displayName": "Login Demo",
+      "description": "登录示例：游客登录 → 绑定 Google → 取 ID token → 登出（编辑器里用内置的模拟提供者跑通整套流程）。",
+      "path": "Samples~/LoginDemo"
+    }
+  ]
+}

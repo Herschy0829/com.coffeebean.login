@@ -1,0 +1,16 @@
+{
+  "name": "CoffeeBean.Login.Demo",
+  "rootNamespace": "CoffeeBean.Login.Samples",
+  "references": [
+    "CoffeeBean.Login"
+  ],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}
