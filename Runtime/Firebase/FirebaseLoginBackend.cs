@@ -323,7 +323,7 @@ namespace CoffeeBean
                 UserId = user.UserId,
                 DisplayName = user.DisplayName,
                 Email = user.Email,
-                PhotoUrl = user.PhotoUrl,
+                PhotoUrl = user.PhotoUrl != null ? user.PhotoUrl.ToString() : null,
                 IsAnonymous = user.IsAnonymous,
                 ProviderId = FirstProviderId(user),
             };
@@ -335,7 +335,7 @@ namespace CoffeeBean
             {
                 if (user.ProviderData != null)
                 {
-                    foreach (UserInfo info in user.ProviderData)
+                    foreach (IUserInfo info in user.ProviderData)
                     {
                         if (info != null && !string.IsNullOrEmpty(info.ProviderId)) return info.ProviderId;
                     }
