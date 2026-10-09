@@ -1,5 +1,18 @@
 # Changelog
 
+## [Unreleased]
+
+### Fixed
+- **Firebase 13.x 编译不过**：`FirebaseUser.PhotoUrl` 在 13.x 里是 `System.Uri`（旧版是 `string`），
+  `UserInfo` 也改名为 `IUserInfo`。装了 Firebase 13.16.0 后 `CoffeeBean.Login.Firebase` 程序集报
+  `FirebaseLoginBackend.cs(326,28): error CS0029` 与 `(338,30): error CS0246: UserInfo`。
+  该程序集带 `defineConstraints: COFFEEBEAN_FIREBASE_AUTH`，而按 SETUP-FIREBASE 用 UPM `.tgz`
+  接入时 `versionDefines` 会**自动**打开该符号 —— 即照文档接 Firebase 13.x 会卡住整个工程编译。
+  已改为 `user.PhotoUrl != null ? user.PhotoUrl.ToString() : null` 与 `foreach (IUserInfo info in ...)`。
+
+  验证：Unity 6000.0.71f1 + `com.google.firebase.app/auth` 13.16.0 + EDM4U 1.2.186 批处理编译，
+  修复前 2 个 `error CS`，修复后 `CoffeeBean.Login.Firebase.dll` 产出且 `scriptCompilationFailed = False`。
+
 ## [0.1.0] - 2026-09-19
 
 ### Added（首个版本）
